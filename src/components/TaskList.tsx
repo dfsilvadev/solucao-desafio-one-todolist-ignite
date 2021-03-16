@@ -13,9 +13,32 @@ interface Task {
 export function TaskList() {
   const [tasks, setTasks] = useState<Task[]>([]);
   const [newTaskTitle, setNewTaskTitle] = useState("");
+  const [error, setError] = useState("");
+
+  function randomId(min: number, max: number): number {
+    const maxInternal = max * 1000;
+    const minInternal = min * 1000;
+    return Math.floor(
+      Math.random() * (maxInternal - minInternal) + minInternal
+    );
+  }
 
   function handleCreateNewTask() {
     // Crie uma nova task com um id random, não permita criar caso o título seja vazio.
+    if (!newTaskTitle) {
+      setError("Preencha o campo com a ToDo");
+      return;
+    }
+
+    const newTask = {
+      id: randomId(1, 200),
+      title: newTaskTitle,
+      isComplete: false,
+    };
+
+    setTasks([...tasks, newTask]);
+    setNewTaskTitle("");
+    setError("");
   }
 
   function handleToggleTaskCompletion(id: number) {
@@ -47,6 +70,7 @@ export function TaskList() {
             <FiCheckSquare size={16} color="#fff" />
           </button>
         </div>
+        {error && <p className="error">{error}</p>}
       </header>
 
       <main>
