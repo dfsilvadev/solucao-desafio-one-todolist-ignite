@@ -34,9 +34,10 @@ export function TaskList() {
         <div className="input-group">
           <input
             type="text"
-            placeholder="Adicionar novo todo"
+            placeholder="Adicionar novo ToDo"
             onChange={(e) => setNewTaskTitle(e.target.value)}
             value={newTaskTitle}
+            autoFocus
           />
           <button
             type="submit"
