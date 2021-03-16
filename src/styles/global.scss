@@ -1,37 +1,90 @@
+@import url("https://fonts.googleapis.com/css2?family=Roboto+Mono:wght@200;300;400;600&family=Roboto:wght@300;400;500;600;700&family=Poppins:wght@400;600&display=swap");
+
 :root {
-  --blue: #273fad;
-  --green: #3fad27;
-  --red: #ad273f;
-  --background: #ebebeb;
+  --header: #8257e6;
+  --green: #4cd62b;
+  --red: #e83f5b;
+  --background: #f2f3f5;
   --shapes: #ffffff;
   --text-title: #3d3d4d;
   --text: #1c1c29;
   --text-light: #a09cb1;
 }
 
+/* RESET */
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
+  vertical-align: baseline;
 }
-
+html,
+body {
+  color: var(--text);
+  background-color: var(--background);
+}
 body {
   font: 16px "Poppins", Arial, sans-serif;
-  color: #121214;
+  overflow-x: hidden;
 }
-
+ol,
+ul {
+  list-style: none;
+}
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-weight: inherit;
+}
+span {
+  display: inline-block;
+}
+a {
+  text-decoration: none;
+}
+a,
+p {
+  font: 14px "Roboto Mono", sans-serif;
+}
 input,
 textarea {
-  font-family: "Poppins";
+  font-family: "Roboto Mono", sans-serif;
 }
-
-.container {
-  max-width: 1120px;
-  margin: 0 auto;
-  padding: 2.5rem 1rem;
-}
-
 button,
 .checkmark {
   cursor: pointer;
+}
+.container {
+  width: 100%;
+  padding-right: 15px;
+  padding-left: 15px;
+  margin-right: auto;
+  margin-left: auto;
+}
+@media (min-width: 576px) {
+  .container {
+    max-width: 540px;
+  }
+}
+@media (min-width: 768px) {
+  .container {
+    max-width: 720px;
+  }
+}
+@media (min-width: 992px) {
+  .container {
+    max-width: 960px;
+  }
+}
+@media (min-width: 1200px) {
+  .container {
+    max-width: 1140px;
+  }
 }
