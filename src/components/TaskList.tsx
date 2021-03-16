@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
 
-import "../styles/components/tasklist.scss";
+import "../styles/tasklist.scss";
 
 import { FiTrash, FiCheckSquare } from "react-icons/fi";
 
