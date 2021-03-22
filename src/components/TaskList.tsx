@@ -1,4 +1,4 @@
-import { useEffect, useState } from "react";
+import { useState } from "react";
 
 import "../styles/tasklist.scss";
 
@@ -13,12 +13,10 @@ interface Task {
 export function TaskList() {
   const [tasks, setTasks] = useState<Task[]>([]);
   const [newTaskTitle, setNewTaskTitle] = useState("");
-  const [error, setError] = useState("");
 
   function handleCreateNewTask() {
     // Crie uma nova task com um id random, não permita criar caso o título seja vazio.
     if (!newTaskTitle) {
-      setError("Preencha o campo com a ToDo");
       return;
     }
 
@@ -30,7 +28,6 @@ export function TaskList() {
 
     setTasks([...tasks, newTask]);
     setNewTaskTitle("");
-    setError("");
   }
 
   function handleToggleTaskCompletion(id: number) {
@@ -63,7 +60,6 @@ export function TaskList() {
             placeholder="Adicionar novo todo"
             onChange={(e) => setNewTaskTitle(e.target.value)}
             value={newTaskTitle}
-            autoFocus
           />
           <button
             type="submit"
@@ -73,7 +69,6 @@ export function TaskList() {
             <FiCheckSquare size={16} color="#fff" />
           </button>
         </div>
-        {error && <p className="error">{error}</p>}
       </header>
 
       <main>
