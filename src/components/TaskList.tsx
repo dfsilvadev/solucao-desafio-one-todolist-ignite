@@ -15,24 +15,6 @@ export function TaskList() {
   const [newTaskTitle, setNewTaskTitle] = useState("");
   const [error, setError] = useState("");
 
-  useEffect(() => {
-    if (tasks.length > 0) localStorage.setItem("tasks", JSON.stringify(tasks));
-  }, [tasks]);
-
-  useEffect(() => {
-    const localTasks = JSON.parse(localStorage.getItem("tasks"));
-    if (localTasks) setTasks(localTasks);
-    else setTasks([]);
-  }, []);
-
-  function randomId(min: number, max: number): number {
-    const maxInternal = max * 1000;
-    const minInternal = min * 1000;
-    return Math.floor(
-      Math.random() * (maxInternal - minInternal) + minInternal
-    );
-  }
-
   function handleCreateNewTask() {
     // Crie uma nova task com um id random, não permita criar caso o título seja vazio.
     if (!newTaskTitle) {
@@ -41,7 +23,7 @@ export function TaskList() {
     }
 
     const newTask = {
-      id: randomId(1, 200),
+      id: Math.random() * 1000,
       title: newTaskTitle,
       isComplete: false,
     };

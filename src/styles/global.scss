@@ -1,86 +1,35 @@
-@import url("https://fonts.googleapis.com/css2?family=Roboto+Mono:wght@200;300;400;600&family=Roboto:wght@300;400;500;600;700&family=Poppins:wght@400;600&display=swap");
-
 :root {
-  --header: #8257e6;
-  --green: #4cd62b;
-  --red: #e83f5b;
-  --background: #f2f3f5;
-  --shapes: #ffffff;
-  --text-title: #3d3d4d;
-  --text: #1c1c29;
-  --text-light: #a09cb1;
+  --blue: #273FAD;
+  --green: #3FAD27;
+  --red: 	#ad273f;
+  --background: #EBEBEB;
+  --shapes: #FFFFFF;
+  --text-title: #3D3D4D;
+  --text: #1C1C29;
+  --text-light: #A09CB1;
 }
 
-/* RESET */
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  font-smoothing: antialiased;
-  text-rendering: optimizeLegibility;
-  vertical-align: baseline;
 }
-html,
-body {
-  color: var(--text);
-  background-color: var(--background);
-}
+
 body {
   font: 16px "Poppins", Arial, sans-serif;
-  overflow-x: hidden;
+  color: #121214;
 }
-ol,
-ul {
-  list-style: none;
+
+input, textarea {
+  font-family: "Poppins";
 }
-h1,
-h2,
-h3,
-h4,
-h5,
-h6 {
-  font-weight: inherit;
-}
-span {
-  display: inline-block;
-}
-a {
-  text-decoration: none;
-}
-input,
-textarea {
-  font-family: "Roboto Mono", sans-serif;
-}
-button,
-.checkmark {
-  cursor: pointer;
-}
+
 .container {
-  width: 100%;
-  padding-right: 15px;
-  padding-left: 15px;
-  margin-right: auto;
-  margin-left: auto;
+  max-width: 1120px;
+  margin: 0 auto;
+  padding: 2.5rem 1rem;
 }
-@media (min-width: 576px) {
-  .container {
-    max-width: 540px;
-  }
-}
-@media (min-width: 768px) {
-  .container {
-    max-width: 720px;
-  }
-}
-@media (min-width: 992px) {
-  .container {
-    max-width: 960px;
-  }
-}
-@media (min-width: 1200px) {
-  .container {
-    max-width: 1140px;
-  }
+
+button, .checkmark {
+  cursor: pointer;
 }
